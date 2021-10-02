@@ -1,0 +1,46 @@
+<form id="contact-form" action="https://formspree.io/f/myylooeq" method="POST">
+    {{#is "en"}}
+    <span>
+        Please leave your <b>contact information</b> <br/>
+        and we’ll get back to you<br />
+         in less than 24 hrs.</span>
+    {{else}}
+    <span>
+        <b>Déjanos tus datos</b> y <br/> nos comunicaremos contigo
+        <br />
+        en menos de 24 hrs.
+    </span>
+    {{/is}}
+    <div class="contact flex-column-md">
+        <div> <input id="contact-name" class="element-start" type="text" placeholder={{#is "en" }}"NAME"{{else}}"NOMBRE"{{/is}} />
+        </div>
+        <div> {{>separator}}
+        </div>
+        <div> <input id = "contact-tel" class="element-middle" type="tel" placeholder={{#is "en" }}"PHONE"{{else}}"TELÉFONO"{{/is}} />
+        </div>
+        <div> {{>separator}}
+        </div>
+        <div> <input id= "contact-mail" class="element-end" name="_replyto" type="email" placeholder={{#is "en"
+                }}"MAIL"{{else}}"CORREO"{{/is}} />
+        </div>
+        <input id="contact-message" type="hidden" name="message" />
+    </div>
+    {{#is "en"}}
+    <input type="image" src="/assets/visuals/enviar-en.svg" name="submit" />
+    {{else}}
+    <input type="image" src="/assets/visuals/enviar.svg"    name="submit" />
+    {{/is}}
+</form>
+<script>
+    let form = document.getElementById("contact-form");
+    form.addEventListener('submit', function(event){
+        let msg = document.getElementById('contact-message');
+        let phone = document.getElementById('contact-tel');
+        let name = document.getElementById('contact-name');
+        let mail = document.getElementById('contact-mail');
+        
+        form.elements['message'].value = name.value + " / " + phone.value + " / " + mail.value;
+        form.submit();
+    });
+
+</script>

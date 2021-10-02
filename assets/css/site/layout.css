@@ -1,0 +1,69 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css);
+.site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.site-content {
+    flex-grow: 1;
+    padding-top: 60px;
+}
+
+.social-buttons {
+    display: flex;
+    flex-direction: row;
+    margin: 1vw;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width:764px) {
+    .social-buttons {
+        flex-direction: column;
+    }
+}
+
+.social-buttons>div>a {
+    margin: 1vh 1vw;
+}
+
+.social-buttons a {
+    display: inline-flex;
+    text-decoration: none;
+    font-size: var(--social-font-size);
+    width: var(--social-icon-size);
+    height: var(--social-icon-size);
+    color: var(--social-icon-color, --white-color);
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 4px 12px;
+}
+
+.social-buttons a::before {
+    content: "";
+    position: absolute;
+    width: var(--social-icon-size);
+    height: var(--social-icon-size);
+    background: linear-gradient(45deg, var(--social-gradient-color-back), var(--social-gradient-color-front));
+    border-radius: 50%;
+    z-index: -1;
+    transition: 0.3s ease-in;
+}
+
+.social-buttons a:hover::before {
+    transform: scale(0);
+}
+
+.social-buttons a i {
+    transition: 0.3s ease-in;
+}
+
+.social-buttons a:hover i {
+    background: linear-gradient(45deg, var(--social-gradient-color-back), var(--social-gradient-color-front));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(2);
+}

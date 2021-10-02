@@ -1,0 +1,32 @@
+{{!< default}} <section id="timeline">
+    <div>
+
+        <p> Sube tus fotos y reseñas del evento usando el #almostlegal en instagram, twitter, facebook y los
+            compartiremos aquí.</p>
+       
+    </div>
+
+    <div class="timeline">
+        {{#get "posts" include="almostlegal"}}
+        {{#foreach posts}}
+        <div class='timeline__event animated fadeInUp delay-3s timeline__event--type1'>
+            <div class="timeline__event__icon ">
+                <i class="fas fa-cannabis"></i>
+
+            </div>
+            <div class="timeline__event__date">
+                {{date published_at timeago="true"}}
+            </div>
+            <div class="timeline__event__content">
+                <div class="timeline__event__title">
+                    {{title}}
+                </div>
+                <div class="timeline__event__description">
+                    <p>{{content}}</p>
+                </div>
+            </div>
+        </div>
+        {{/foreach}}
+        {{/get}}
+    </div>
+    </section>

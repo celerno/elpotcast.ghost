@@ -1,0 +1,36 @@
+
+form{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+}
+form span{
+    text-align: center;
+}
+.contact {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.75rem;
+    align-items: center;
+    justify-content: center;
+}
+
+input{
+    background-color: inherit;
+    font-family: var(--font-semibold);
+    border-width: 0px;
+    letter-spacing: .07rem;
+    line-height: 14.32px;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+}
+form > input[type="image"]{
+    margin-top: 1rem;
+}
+form> span{
+    font-size: 16px;
+    line-height: 24px;
+}
