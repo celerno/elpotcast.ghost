@@ -22,6 +22,11 @@
                     {{title}}
                 </div>
                 <div class="timeline__event__description">
+                    {{#if feature_image}}
+                    <picture>
+                        <img loading="lazy" src="{{feature_image}}" />
+                    </picture>
+                    {{/if}}
                     <p>{{content}}</p>
                 </div>
             </div>
