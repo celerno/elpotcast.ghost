@@ -7,7 +7,7 @@
     </div>
 
     <div class="timeline">
-        {{#get "posts" include="almostlegal"}}
+        {{#get "posts" filter="tag:almostlegal" limit="all"}}
         {{#foreach posts}}
         <div class='timeline__event animated fadeInUp delay-3s timeline__event--type1'>
             <div class="timeline__event__icon ">
