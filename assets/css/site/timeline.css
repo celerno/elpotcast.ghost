@@ -115,6 +115,12 @@
     border-radius: 6px 0 0 6px;
 }
 
+.timeline__event__date>a {
+    color: unset;
+    text-decoration: unset;
+    font: unset;
+}
+
 .timeline__event__icon {
     display: flex;
     align-items: center;
